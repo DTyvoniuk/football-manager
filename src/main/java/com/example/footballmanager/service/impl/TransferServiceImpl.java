@@ -51,6 +51,7 @@ public class TransferServiceImpl implements TransferService {
                 player.getFootballClub().getBalance().add(transfer.getPrice()));
         footballClub.setBalance(footballClub.getBalance()
                 .add(transfer.getPrice().negate()));
+        player.setFootballClub(footballClub);
         return transferRepository.save(transfer);
     }
 
